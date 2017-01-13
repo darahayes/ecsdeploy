@@ -1,22 +1,15 @@
 {
-  "name": "ecs-deploy",
-  "version": "0.0.1",
+  "name": "ecsdeploy",
+  "version": "0.0.3",
   "description": "A tool to help you deploy AWS ECS Services",
-  "author": "Dara Hayes",
+  "author": "Dara Hayes <dara.s.hayes@gmail.com> (https://darahayes.com)",
   "license": "MIT",
-  "main": "index.js",
+  "main": "lib/deploy.js",
+  "bin": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "standard | snazzy"
   },
-  "keywords": [
-    "AWS",
-    "ECS",
-    "Deployment",
-    "Docker",
-    "Continous",
-    "Delivery"
-  ],
   "devDependencies": {
     "pre-commit": "^1.2.2",
     "snazzy": "^6.0.0",
@@ -29,7 +22,12 @@
   "pre-commit": [
     "lint"
   ],
-  "bin": {
-    "ecsd": "index.js"
-  }
+  "keywords": [
+    "AWS",
+    "ECS",
+    "Deployment",
+    "Docker",
+    "Continous",
+    "Delivery"
+  ]
 }
