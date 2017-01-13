@@ -1,6 +1,6 @@
 {
   "name": "ecsdeploy",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "A tool to help you deploy AWS ECS Services",
   "author": "Dara Hayes <dara.s.hayes@gmail.com> (https://darahayes.com)",
   "license": "MIT",
