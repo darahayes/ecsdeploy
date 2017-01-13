@@ -13,8 +13,7 @@ program
 
 program.parse(process.argv)
 
-function runDeploy(task, options)
-{
+function runDeploy (task, options) {
   console.log('task:', task)
   console.log('service', options.service)
   console.log('cluster', options.cluster)
@@ -30,5 +29,4 @@ function runDeploy(task, options)
   }
 
   ecsDeploy(task, options.service, options.cluster)
-
 }
