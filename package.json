@@ -4,7 +4,7 @@
   "description": "A tool to help you deploy AWS ECS Services",
   "author": "Dara Hayes",
   "license": "MIT",
-  "main": "index.js",
+  "main": "lib/deploy.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "standard | snazzy"
