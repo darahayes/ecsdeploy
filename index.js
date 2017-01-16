@@ -4,7 +4,7 @@ const program = require('commander')
 const run = require('./lib/run')
 
 program
-  .version('0.0.1')
+  .version('1.0.4')
   .description('Deploy a task definition to a given ECS cluster')
   .option('-t --task [taskDefinition]', 'The task definition to create')
   .option('-s, --service [service]', 'The service to update')
