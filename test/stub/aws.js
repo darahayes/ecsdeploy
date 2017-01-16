@@ -3,7 +3,7 @@ module.exports = {
     ECS: function ECS (opts) {
       return {
         registerTaskDefinition: (opts, callback) => {
-          let response = {
+          var response = {
             taskDefinition: {
               taskDefinitionArn: 123
             }
@@ -11,7 +11,7 @@ module.exports = {
           callback(null, response)
         },
         updateService: (opts, callback) => {
-          let response = {
+          var response = {
             service: {
               taskDefinition: 123,
               serviceArn: 456,
