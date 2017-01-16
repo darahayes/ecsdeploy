@@ -23,7 +23,7 @@ if (!process.stdin.isTTY) {
   run(program, done)
 }
 
-function done(err, result) {
+function done (err, result) {
   if (err) {
     (err.message === 'invalid args') ? program.help() : console.log(err)
   }
