@@ -10,7 +10,7 @@ const run = proxyquire('../lib/run.js', {
 tape('run.js calls the deploy function', (test) => {
   test.plan(2)
   var opts = {
-    taskDefinition: 'myTask',
+    taskDefinition: JSON.stringify({foo: 'bar'}),
     service: 'myService',
     cluster: 'myCluster'
   }
@@ -23,11 +23,23 @@ tape('run.js calls the deploy function', (test) => {
 tape('run.js will not call the deploy function if arguments are wrong', (test) => {
   test.plan(2)
   var opts = {
-    taskDefinition: 'myTask',
+    taskDefinition: JSON.stringify({foo: 'bar'}),
     cluster: 'myCluster'
   }
   run(opts, (err, result) => {
     test.ok(err, 'an error occurred')
     test.equal(err.message, 'invalid args', 'invalid args error')
+  })
+})
+
+tape('run.js throws if invalid taskDefinition JSON is supplied', (test) => {
+  test.plan(1)
+  var opts = {
+    taskDefinition: 'some: bad: JSON',
+    service: 'myService',
+    cluster: 'myCluster'
+  }
+  test.throws(() => {
+    run(opts)
   })
 })
