@@ -1,0 +1,12 @@
+{
+  "family": "myTestTaskDef",
+  "containerDefinitions": [
+    {
+      "memoryReservation": "300",
+      "essential": true,
+      "name": "myContainer",
+      "image": "nginx:latest",
+      "cpu": "300"
+    }
+  ]
+}
