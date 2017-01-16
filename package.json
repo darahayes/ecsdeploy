@@ -12,6 +12,7 @@
   "bin": "index.js",
   "scripts": {
     "test": "tape test/*.test.js | tap-spec",
+    "unit": "tape test/*.test.js | tap-spec",
     "lint": "standard | snazzy"
   },
   "devDependencies": {
@@ -27,7 +28,8 @@
     "commander": "^2.9.0"
   },
   "pre-commit": [
-    "lint"
+    "lint",
+    "unit"
   ],
   "keywords": [
     "AWS",
