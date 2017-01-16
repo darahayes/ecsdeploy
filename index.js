@@ -17,8 +17,15 @@ if (!process.stdin.isTTY) {
   process.stdin.on('data', (chunk) => { pipe += chunk })
   process.stdin.on('end', () => {
     program.taskDefinition = pipe.trim()
-    run(program)
+    run(program, done)
   })
 } else {
-  run(program)
+  run(program, done)
+}
+
+function done (err, result) {
+  if (err) {
+    (err.message === 'invalid args') ? program.help() : console.log(err)
+  }
+  console.log(result)
 }

@@ -4,23 +4,32 @@
   "description": "A tool to help you deploy AWS ECS Services",
   "author": "Dara Hayes <dara.s.hayes@gmail.com> (https://darahayes.com)",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darahayes/ecsdeploy.git"
+  },
   "main": "lib/deploy.js",
   "bin": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "tape test/*.test.js | tap-spec",
+    "unit": "tape test/*.test.js | tap-spec",
     "lint": "standard | snazzy"
   },
   "devDependencies": {
     "pre-commit": "^1.2.2",
+    "proxyquire": "^1.7.10",
     "snazzy": "^6.0.0",
-    "standard": "^8.6.0"
+    "standard": "^8.6.0",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.3"
   },
   "dependencies": {
     "aws-sdk": "^2.7.21",
     "commander": "^2.9.0"
   },
   "pre-commit": [
-    "lint"
+    "lint",
+    "unit"
   ],
   "keywords": [
     "AWS",

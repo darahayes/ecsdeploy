@@ -4,13 +4,18 @@ A very simple tool that **uses pipes** to update tasks on existing services in A
 
 ## Use as a CLI tool
 
+```bash
+npm install -g ecsdeploy
+```
+
 Pipe the task definition JSON string into the `ecsdeploy` command. Use `-c` and `-s` to specify the cluster and service.
 
 ```bash
 cat taskDef.json | ecsdeploy -s myService -c myCluster
 
-Task Definition: arn:aws:ecs:eu-west-1:123456789098:task-definition/myTaskDef:17
-Service: arn:aws:ecs:eu-west-1:156233825351:service/myService
+{ taskDefinition: 'arn:aws:ecs:eu-west-1:12345678909:task-definition/myTestTaskDef:26',
+  service: 'arn:aws:ecs:eu-west-1:12345678909:service/myService',
+  cluster: 'arn:aws:ecs:eu-west-1:12345678909:cluster/myCluster' }
 ```
 
 where `taskDef.json` is the following:
@@ -33,4 +38,4 @@ where `taskDef.json` is the following:
 ### Why Pipes?
 Let's say we have a CI/CD pipeline for AWS ECS. We generally create the task definition JSON during the build process because every build has different outputs such as image tags, environment variables etc.
 
-So whatever tool you use create that task definition, just pipe the output straight into `ecsdeploy.`
+So whatever tool you use to create that task definition, just pipe the output straight into `ecsdeploy.`
