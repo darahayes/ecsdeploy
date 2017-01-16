@@ -1,5 +1,7 @@
 # ECS Deploy
 
+[![CircleCI](https://circleci.com/gh/darahayes/ecsdeploy.svg?style=svg)](https://circleci.com/gh/darahayes/ecsdeploy)
+
 A very simple tool that **uses pipes** to update tasks on existing services in Amazon ECS
 
 ## Use as a CLI tool
