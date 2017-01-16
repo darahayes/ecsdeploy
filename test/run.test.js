@@ -9,7 +9,7 @@ const run = proxyquire('../lib/run.js', {
 
 tape('run.js calls the deploy function', (test) => {
   test.plan(2)
-  let opts = {
+  var opts = {
     taskDefinition: 'myTask',
     service: 'myService',
     cluster: 'myCluster'
@@ -22,7 +22,7 @@ tape('run.js calls the deploy function', (test) => {
 
 tape('run.js will not call the deploy function if arguments are wrong', (test) => {
   test.plan(2)
-  let opts = {
+  var opts = {
     taskDefinition: 'myTask',
     cluster: 'myCluster'
   }

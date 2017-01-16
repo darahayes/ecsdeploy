@@ -1,12 +1,14 @@
 # ECS Deploy
 
-A very simple tool that **uses pipes** to update tasks on existing services in Amazon ECS
+[![CircleCI](https://circleci.com/gh/darahayes/ecsdeploy.svg?style=svg)](https://circleci.com/gh/darahayes/ecsdeploy)
 
-## Use as a CLI tool
+A very simple tool that **uses pipes** to update tasks on existing services in Amazon ECS
 
 ```bash
 npm install -g ecsdeploy
 ```
+
+## Use as a CLI tool
 
 Pipe the task definition JSON string into the `ecsdeploy` command. Use `-c` and `-s` to specify the cluster and service.
 
@@ -16,6 +18,22 @@ cat taskDef.json | ecsdeploy -s myService -c myCluster
 { taskDefinition: 'arn:aws:ecs:eu-west-1:12345678909:task-definition/myTestTaskDef:26',
   service: 'arn:aws:ecs:eu-west-1:12345678909:service/myService',
   cluster: 'arn:aws:ecs:eu-west-1:12345678909:cluster/myCluster' }
+```
+
+## Use Programmatically
+
+```js
+const ecsDeploy = require('ecsdeploy')
+
+var opts = {
+  taskDefinition: require('./taskDef.json'),
+  service: 'myService',
+  cluster: 'myCluster'
+}
+
+ecsDeploy(opts, (err, result) => {
+  console.log(result)
+})
 ```
 
 where `taskDef.json` is the following:
