@@ -1,5 +1,6 @@
-build:
-  image: node
-  commands:
-    - npm install --development
-    - npm test
+pipeline:
+  build:
+    image: node
+    commands:
+      - npm install --development
+      - npm test
