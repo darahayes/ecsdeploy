@@ -1,5 +1,5 @@
 build:
-  image: node:6.9.1
+  image: node
   commands:
     - npm install
     - npm test
