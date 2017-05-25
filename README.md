@@ -10,7 +10,7 @@ npm install -g ecsdeploy
 
 ## Use as a CLI tool
 
-Let's say we have a task definition JSON file for an app:
+Let's say we have a task definition file for an ECS service:
 
 ```
 {
@@ -27,7 +27,7 @@ Let's say we have a task definition JSON file for an app:
 }
 ```
 
-We can deploy this task definition to an ECS service with `ecsdeploy`
+`ecsdeploy` makes it really easy to deploy.
 
 ```bash
 ecsdeploy -s myService -c myCluster -t myTaskDef.json
@@ -61,23 +61,6 @@ var opts = {
 ecsDeploy(opts, (err, result) => {
   console.log(result)
 })
-```
-
-where `taskDef.json` is the following:
-
-```
-{
-  "family": "myTestTaskDef",
-  "containerDefinitions": [
-    {
-      "memoryReservation": "300",
-      "essential": true,
-      "name": "myContainer",
-      "image": "nginx:latest",
-      "cpu": "300"
-    }
-  ]
-}
 ```
 
 ### Why is ecsdeploy needed?
