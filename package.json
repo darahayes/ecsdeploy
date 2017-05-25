@@ -25,7 +25,8 @@
   },
   "dependencies": {
     "aws-sdk": "^2.7.21",
-    "commander": "^2.9.0"
+    "commander": "^2.9.0",
+    "fast-json-parse": "^1.0.2"
   },
   "pre-commit": [
     "lint",

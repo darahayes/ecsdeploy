@@ -6,7 +6,7 @@ const run = require('./lib/run')
 program
   .version('1.0.4')
   .description('Deploy a task definition to a given ECS cluster')
-  .option('-t --task [taskDefinition]', 'The task definition to create')
+  .option('-t --taskFile [taskDefinitionFile]', 'The task definition file to create')
   .option('-s, --service [service]', 'The service to update')
   .option('-c --cluster [cluster]', 'The cluster the service is defined in')
   .parse(process.argv)
@@ -25,7 +25,7 @@ if (!process.stdin.isTTY) {
 
 function done (err, result) {
   if (err) {
-    (err.message === 'invalid args') ? program.help() : console.log(err)
+    (err.message === 'invalid args') ? program.help() : console.error(err)
   }
   console.log(result)
 }
